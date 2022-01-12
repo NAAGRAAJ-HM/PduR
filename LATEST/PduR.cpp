@@ -2,6 +2,6 @@
 
 class_PduR PduR;
 
-void class_PduR::InitFunction(void){
+FUNC(void, PDUR_CODE) class_PduR::InitFunction(void){
 }
 
