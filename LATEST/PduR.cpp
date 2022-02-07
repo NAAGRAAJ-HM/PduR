@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "PduR.h"
 
+#include "PduR_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -31,12 +33,14 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
+class_PduR_EcuM PduR_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_PduR = &PduR_EcuM;
 class_PduR PduR;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, PDUR_CODE) class_PduR::InitFunction(void){
+FUNC(void, PDUR_CODE) class_PduR_EcuM::InitFunction(void){
 }
 
 FUNC(void, PDUR_CODE) class_PduR::GetVersinInfo(void){
