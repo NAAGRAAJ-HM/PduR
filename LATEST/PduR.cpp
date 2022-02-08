@@ -9,9 +9,12 @@
 #include "PduR.h"
 
 #include "PduR_EcuM.h"
+#include "PduR_SchM.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
+/*****************************************************/
+
 /*****************************************************/
 
 /*****************************************************/
@@ -35,12 +38,17 @@
 /*****************************************************/
 class_PduR_EcuM PduR_EcuM;
 class_EcuM_Client *EcuM_Client_ptr_PduR = &PduR_EcuM;
+class_PduR_SchM PduR_SchM;
+class_SchM_Client *SchM_Client_ptr_PduR = &PduR_SchM;
 class_PduR PduR;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
 FUNC(void, PDUR_CODE) class_PduR_EcuM::InitFunction(void){
+}
+
+FUNC(void, PDUR_CODE) class_PduR_SchM::MainFunction(void){
 }
 
 FUNC(void, PDUR_CODE) class_PduR::GetVersinInfo(void){
