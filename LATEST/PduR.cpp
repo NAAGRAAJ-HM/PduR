@@ -36,19 +36,20 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_PduR_EcuM PduR_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_PduR = &PduR_EcuM;
-class_PduR_SchM PduR_SchM;
-class_SchM_Client *SchM_Client_ptr_PduR = &PduR_SchM;
+class_PduR_EcuM_Init PduR_EcuM_Init;
+class_PduR_SchM_Main PduR_SchM_Main;
 class_PduR PduR;
+
+class_EcuM_Init_Client *EcuM_Init_Client_ptr_PduR = &PduR_EcuM_Init;
+class_SchM_Main_Client *SchM_Main_Client_ptr_PduR = &PduR_SchM_Main;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, PDUR_CODE) class_PduR_EcuM::InitFunction(void){
+FUNC(void, PDUR_CODE) class_PduR_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_SchM::MainFunction(void){
+FUNC(void, PDUR_CODE) class_PduR_SchM_Main::MainFunction(void){
 }
 
 FUNC(void, PDUR_CODE) class_PduR::GetVersinInfo(void){
