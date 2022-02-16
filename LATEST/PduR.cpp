@@ -41,8 +41,8 @@ class module_PduR : public class_module{
 /*****************************************************/
 module_PduR PduR;
 
-class_EcuM_Client *EcuM_Client_ptr_PduR = &PduR;
-class_SchM_Client *SchM_Client_ptr_PduR = &PduR;
+//class_EcuM_Client *EcuM_Client_ptr_PduR = &PduR;
+//class_SchM_Client *SchM_Client_ptr_PduR = &PduR;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
