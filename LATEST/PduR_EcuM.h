@@ -22,7 +22,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_PduR_EcuM : public class_EcuM_Client{
+class interface_PduR_EcuM : public interface_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -41,7 +41,7 @@ class class_PduR_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_EcuM_Client *EcuM_Client_ptr_PduR;
+extern interface_PduR_EcuM *EcuM_Client_ptr_PduR;
 
 /*****************************************************/
 /* EOF                                               */

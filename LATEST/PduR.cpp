@@ -7,7 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-
+#include "PduR_EcuM.h"
+#include "PduR_SchM.h"
 #include "PduR_Unused.h"
 
 /*****************************************************/
@@ -21,7 +22,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_PduR : public class_module{
+class module_PduR:
+      public abstract_module
+   ,  public interface_PduR_EcuM
+   ,  public interface_PduR_SchM
+{
    public:
       FUNC(void, PDUR_CODE) InitFunction   (void);
       FUNC(void, PDUR_CODE) DeInitFunction (void);
@@ -41,13 +46,16 @@ class module_PduR : public class_module{
 /*****************************************************/
 module_PduR PduR;
 
-//class_EcuM_Client *EcuM_Client_ptr_PduR = &PduR;
-//class_SchM_Client *SchM_Client_ptr_PduR = &PduR;
+interface_PduR_EcuM *EcuM_Client_ptr_PduR = &PduR;
+interface_PduR_SchM *SchM_Client_ptr_PduR = &PduR;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
 FUNC(void, PDUR_CODE) module_PduR::InitFunction(void){
+}
+
+FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
 }
 
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
