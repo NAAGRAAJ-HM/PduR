@@ -27,7 +27,8 @@ class interface_PduR_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, PDUR_CODE) InitFunction(void);
+      virtual FUNC(void, PDUR_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, PDUR_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
