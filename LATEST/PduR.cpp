@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_PduR:
       public abstract_module
-   ,  public interface_PduR_EcuM
-   ,  public interface_PduR_SchM
 {
    public:
       FUNC(void, PDUR_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_PduR:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_PduR PduR;
-
-interface_PduR_EcuM *EcuM_Client_ptr_PduR = &PduR;
-interface_PduR_SchM *SchM_Client_ptr_PduR = &PduR;
+module_PduR    PduR;
+infEcuMClient* gptrinfEcuMClient_PduR = &PduR;
+infSchMClient* gptrinfSchMClient_PduR = &PduR;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
