@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_PduR_SchM *SchM_Client_ptr_PduR;
+extern infSchMClient *gptrinfSchMClient_PduR;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
