@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "PduR_EcuM.h"
-#include "PduR_SchM.h"
+#include "infPduR_EcuM.h"
+#include "infPduR_SchM.h"
 #include "PduR_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_PduR:
    public:
       FUNC(void, PDUR_CODE) InitFunction   (void);
       FUNC(void, PDUR_CODE) DeInitFunction (void);
+      FUNC(void, PDUR_CODE) GetVersionInfo (void);
       FUNC(void, PDUR_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_PduR:
 /*****************************************************/
 module_PduR    PduR;
 infEcuMClient* gptrinfEcuMClient_PduR = &PduR;
+infDcmClient*  gptrinfDcmClient_PduR  = &PduR;
 infSchMClient* gptrinfSchMClient_PduR = &PduR;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(void){
 }
 
 FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
+}
+
+FUNC(void, PDUR_CODE) module_PduR::GetVersionInfo(void){
 }
 
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
