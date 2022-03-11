@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infPduR_EcuM.h"
+#include "infPduR_Dcm.h"
 #include "infPduR_SchM.h"
-#include "PduR_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -63,8 +63,7 @@ FUNC(void, PDUR_CODE) module_PduR::GetVersionInfo(void){
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Unused::GetVersinInfo(void){
-}
+#include "PduR_Unused.h"
 
 FUNC(void, PDUR_CODE) class_PduR_Unused::GetConfigurationId(void){
 }

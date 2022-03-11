@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : PduR_EcuM.h                              */
+/* File   : infPduR_Dcm.h                            */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient* gptrinfEcuMClient_PduR;
+extern infDcmClient* gptrinfDcmClient_PduR;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
