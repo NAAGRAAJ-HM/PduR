@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infPduR_Version.h"
-
 #include "module.h"
+#include "infPduR_Version.h"
 #include "infPduR_EcuM.h"
 #include "infPduR_Dcm.h"
 #include "infPduR_SchM.h"
@@ -45,31 +44,20 @@ class module_PduR:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_PduR, PDUR_VAR) PduR;
 CONSTP2VAR(infEcuMClient, PDUR_VAR, PDUR_CONST) gptrinfEcuMClient_PduR = &PduR;
 CONSTP2VAR(infDcmClient,  PDUR_VAR, PDUR_CONST) gptrinfDcmClient_PduR  = &PduR;
 CONSTP2VAR(infSchMClient, PDUR_VAR, PDUR_CONST) gptrinfSchMClient_PduR = &PduR;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, PDUR_CODE) module_PduR::InitFunction(void){
+   PduR.IsInitDone = E_OK;
 }
 
 FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
+   PduR.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, PDUR_CODE) module_PduR::GetVersionInfo(void){
@@ -122,7 +110,7 @@ FUNC(void, PDUR_CODE) class_PduR_Unused::TpCopyTxData(void){
 FUNC(void, PDUR_CODE) class_PduR_Unused::TpTxConfirmation(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 
