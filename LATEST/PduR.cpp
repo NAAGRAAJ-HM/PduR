@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infPduR_Version.h"
+#include "PduR_Cfg.h"
 #include "infPduR_EcuM.h"
 #include "infPduR_Dcm.h"
 #include "infPduR_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define PDUR_AR_RELEASE_MAJOR_VERSION                                          4
+#define PDUR_AR_RELEASE_MINOR_VERSION                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(PDUR_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible PDUR_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(PDUR_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible PDUR_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
 }
 
 FUNC(void, PDUR_CODE) module_PduR::GetVersionInfo(void){
+#if(STD_ON == PduR_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
