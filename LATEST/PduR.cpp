@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "PduR_Cfg.h"
+#include "CfgPduR.h"
 #include "infPduR_EcuM.h"
 #include "infPduR_Dcm.h"
 #include "infPduR_SchM.h"
