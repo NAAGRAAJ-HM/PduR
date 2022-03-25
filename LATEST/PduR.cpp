@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgPduR.h"
-#include "infPduR_EcuM.h"
-#include "infPduR_Dcm.h"
-#include "infPduR_SchM.h"
+#include "module.hpp"
+#include "CfgPduR.hpp"
+#include "infPduR_EcuM.hpp"
+#include "infPduR_Dcm.hpp"
+#include "infPduR_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, PDUR_CODE) module_PduR::GetVersionInfo(void){
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 }
 
-#include "PduR_Unused.h"
+#include "PduR_Unused.hpp"
 
 FUNC(void, PDUR_CODE) class_PduR_Unused::GetConfigurationId(void){
 }
