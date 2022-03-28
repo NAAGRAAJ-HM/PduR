@@ -90,7 +90,23 @@ FUNC(void, PDUR_CODE) module_PduR::GetVersionInfo(void){
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 }
 
-#include "PduR_Unused.hpp"
+class class_PduR_Unused{
+   public:
+      FUNC(void, PDUR_CODE) GetConfigurationId (void);
+      FUNC(void, PDUR_CODE) DisableRouting     (void);
+      FUNC(void, PDUR_CODE) EnableRouting      (void);
+      FUNC(void, PDUR_CODE) Transmit           (void);
+      FUNC(void, PDUR_CODE) CancelTransmit     (void);
+      FUNC(void, PDUR_CODE) CancelReceive      (void);
+      FUNC(void, PDUR_CODE) RxIndication       (void);
+      FUNC(void, PDUR_CODE) TxConfirmation     (void);
+      FUNC(void, PDUR_CODE) TriggerTrasnmit    (void);
+      FUNC(void, PDUR_CODE) TpCopyRxData       (void);
+      FUNC(void, PDUR_CODE) TpRxIndication     (void);
+      FUNC(void, PDUR_CODE) TpStartOfReception (void);
+      FUNC(void, PDUR_CODE) TpCopyTxData       (void);
+      FUNC(void, PDUR_CODE) TpTxConfirmation   (void);
+};
 
 FUNC(void, PDUR_CODE) class_PduR_Unused::GetConfigurationId(void){
 }
