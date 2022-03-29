@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgPduR.hpp"
 #include "infPduR_EcuM.hpp"
 #include "infPduR_Dcm.hpp"
 #include "infPduR_SchM.hpp"
@@ -36,37 +35,40 @@ class module_PduR:
       public abstract_module
 {
    public:
+      module_PduR(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, PDUR_CODE) InitFunction   (void);
       FUNC(void, PDUR_CODE) DeInitFunction (void);
-      FUNC(void, PDUR_CODE) GetVersionInfo (void);
       FUNC(void, PDUR_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, PDUR_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_PduR, PDUR_VAR) PduR;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, PDUR_VAR, PDUR_CONST) gptrinfEcuMClient_PduR = &PduR;
+CONSTP2VAR(infDcmClient,  PDUR_VAR, PDUR_CONST) gptrinfDcmClient_PduR  = &PduR;
+CONSTP2VAR(infSchMClient, PDUR_VAR, PDUR_CONST) gptrinfSchMClient_PduR = &PduR;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgPduR.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_PduR, PDUR_VAR) PduR;
-CONSTP2VAR(infEcuMClient, PDUR_VAR, PDUR_CONST) gptrinfEcuMClient_PduR = &PduR;
-CONSTP2VAR(infDcmClient,  PDUR_VAR, PDUR_CONST) gptrinfDcmClient_PduR  = &PduR;
-CONSTP2VAR(infSchMClient, PDUR_VAR, PDUR_CONST) gptrinfSchMClient_PduR = &PduR;
+VAR(module_PduR, PDUR_VAR) PduR(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(void){
 
 FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
    PduR.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, PDUR_CODE) module_PduR::GetVersionInfo(void){
-#if(STD_ON == PduR_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
