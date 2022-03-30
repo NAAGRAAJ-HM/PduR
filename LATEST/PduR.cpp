@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infPduR_EcuM.hpp"
 #include "infPduR_Dcm.hpp"
 #include "infPduR_SchM.hpp"
@@ -37,6 +37,9 @@ class module_PduR:
    public:
       module_PduR(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, PDUR_CODE) InitFunction   (void);
       FUNC(void, PDUR_CODE) DeInitFunction (void);
       FUNC(void, PDUR_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_PduR, PDUR_VAR) PduR(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, PDUR_CODE) module_PduR::InitFunction(void){
+FUNC(void, PDUR_CODE) module_PduR::InitFunction(
+   CONSTP2CONST(CfgPduR_Type, CFGPDUR_CONFIG_DATA, CFGPDUR_APPL_CONST) lptrCfgPduR
+){
+   if(NULL_PTR == lptrCfgPduR){
+#if(STD_ON == PduR_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgPduR for memory faults
+// use PBcfg_PduR as back-up configuration
+   }
    PduR.IsInitDone = E_OK;
 }
 
