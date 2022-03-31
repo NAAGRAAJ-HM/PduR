@@ -37,10 +37,9 @@ class module_PduR:
    public:
       module_PduR(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, PDUR_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, PDUR_CODE) InitFunction   (void);
       FUNC(void, PDUR_CODE) DeInitFunction (void);
       FUNC(void, PDUR_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_PduR, PDUR_VAR) PduR(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, PDUR_CODE) module_PduR::InitFunction(
-   CONSTP2CONST(CfgPduR_Type, CFGPDUR_CONFIG_DATA, CFGPDUR_APPL_CONST) lptrCfgPduR
+   CONSTP2CONST(CfgModule_TypeAbstract, PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgPduR){
+   if(E_OK == IsInitDone){
 #if(STD_ON == PduR_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgPduR for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == PduR_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_PduR as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   PduR.IsInitDone = E_OK;
 }
 
 FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
-   PduR.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == PduR_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
