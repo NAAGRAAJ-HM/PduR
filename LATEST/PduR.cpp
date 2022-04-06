@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define PDUR_AR_RELEASE_MAJOR_VERSION                                          4
-#define PDUR_AR_RELEASE_MINOR_VERSION                                          3
+#define PDUR_AR_RELEASE_VERSION_MAJOR                                          4
+#define PDUR_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(PDUR_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible PDUR_AR_RELEASE_MAJOR_VERSION!"
+#if(PDUR_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible PDUR_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(PDUR_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible PDUR_AR_RELEASE_MINOR_VERSION!"
+#if(PDUR_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible PDUR_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, PDUR_VAR, PDUR_CONST) gptrinfSchMClient_PduR = &PduR;
 /******************************************************************************/
 VAR(module_PduR, PDUR_VAR) PduR(
    {
-         0x0000
-      ,  0xFFFF
+         PDUR_AR_RELEASE_VERSION_MAJOR
+      ,  PDUR_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
