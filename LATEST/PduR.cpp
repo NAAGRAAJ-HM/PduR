@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "PduR_core.hpp"
 #include "infPduR_EcuM.hpp"
 #include "infPduR_Dcm.hpp"
 #include "infPduR_SchM.hpp"
