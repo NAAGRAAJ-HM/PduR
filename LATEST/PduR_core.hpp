@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define PDUR_COREFUNCTIONALITIES                                               \
+#define PDUR_CORE_FUNCTIONALITIES                                              \
               FUNC(void, PDUR_CODE) GetConfigurationId (void);                 \
               FUNC(void, PDUR_CODE) DisableRouting     (void);                 \
               FUNC(void, PDUR_CODE) EnableRouting      (void);                 \
@@ -28,7 +28,7 @@
               FUNC(void, PDUR_CODE) TpCopyTxData       (void);                 \
               FUNC(void, PDUR_CODE) TpTxConfirmation   (void);                 \
 
-#define PDUR_COREFUNCTIONALITIES_VIRTUAL                                       \
+#define PDUR_CORE_FUNCTIONALITIES_VIRTUAL                                      \
       virtual FUNC(void, PDUR_CODE) GetConfigurationId (void) = 0;             \
       virtual FUNC(void, PDUR_CODE) DisableRouting     (void) = 0;             \
       virtual FUNC(void, PDUR_CODE) EnableRouting      (void) = 0;             \
@@ -53,7 +53,7 @@
 /******************************************************************************/
 class class_PduR_Functionality{
    public:
-      PDUR_COREFUNCTIONALITIES_VIRTUAL
+      PDUR_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

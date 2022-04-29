@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgPduR.hpp"
 #include "PduR_core.hpp"
-#include "infPduR_EcuM.hpp"
-#include "infPduR_Dcm.hpp"
-#include "infPduR_SchM.hpp"
+#include "infPduR.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_PduR:
       );
       FUNC(void, PDUR_CODE) DeInitFunction (void);
       FUNC(void, PDUR_CODE) MainFunction   (void);
+      PDUR_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_PduR, PDUR_VAR) PduR;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, PDUR_VAR, PDUR_CONST) gptrinfSchMClient_PduR = &PduR;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgPduR.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
