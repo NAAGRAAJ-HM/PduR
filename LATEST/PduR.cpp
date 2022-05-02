@@ -159,46 +159,46 @@ FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 #endif
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::GetConfigurationId(void){
+FUNC(void, PDUR_CODE) module_PduR::GetConfigurationId(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::DisableRouting(void){
+FUNC(void, PDUR_CODE) module_PduR::DisableRouting(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::EnableRouting(void){
+FUNC(void, PDUR_CODE) module_PduR::EnableRouting(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::Transmit(void){
+FUNC(void, PDUR_CODE) module_PduR::Transmit(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::CancelTransmit(void){
+FUNC(void, PDUR_CODE) module_PduR::CancelTransmit(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::CancelReceive(void){
+FUNC(void, PDUR_CODE) module_PduR::CancelReceive(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::RxIndication(void){
+FUNC(void, PDUR_CODE) module_PduR::RxIndication(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::TxConfirmation(void){
+FUNC(void, PDUR_CODE) module_PduR::TxConfirmation(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::TriggerTrasnmit(void){
+FUNC(void, PDUR_CODE) module_PduR::TriggerTrasnmit(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::TpCopyRxData(void){
+FUNC(void, PDUR_CODE) module_PduR::TpCopyRxData(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::TpRxIndication(void){
+FUNC(void, PDUR_CODE) module_PduR::TpRxIndication(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::TpStartOfReception(void){
+FUNC(void, PDUR_CODE) module_PduR::TpStartOfReception(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::TpCopyTxData(void){
+FUNC(void, PDUR_CODE) module_PduR::TpCopyTxData(void){
 }
 
-FUNC(void, PDUR_CODE) class_PduR_Functionality::TpTxConfirmation(void){
+FUNC(void, PDUR_CODE) module_PduR::TpTxConfirmation(void){
 }
 
 /******************************************************************************/
