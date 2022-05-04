@@ -113,7 +113,7 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PDUR_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PDUR_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  PDUR_E_UNINIT
       );
 #endif
    }
