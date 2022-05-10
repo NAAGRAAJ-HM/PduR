@@ -89,7 +89,10 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == PduR_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(
 
 FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
 #if(STD_ON == PduR_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == PduR_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
 
 FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 #if(STD_ON == PduR_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == PduR_InitCheck)
    }
