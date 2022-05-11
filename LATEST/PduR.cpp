@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgPduR.hpp"
 #include "PduR_core.hpp"
-#include "infPduR.hpp"
+#include "infPduR_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_PduR:
+   INTERFACES_EXPORTED_PDUR
       public abstract_module
    ,  public class_PduR_Functionality
 {
