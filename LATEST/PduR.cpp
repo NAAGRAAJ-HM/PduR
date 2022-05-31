@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_PduR:
-   INTERFACES_EXPORTED_PDUR
+      INTERFACES_EXPORTED_PDUR
       public abstract_module
    ,  public class_PduR_Functionality
 {
