@@ -72,6 +72,10 @@ CONSTP2VAR(infSchMClient, PDUR_VAR, PDUR_CONST) gptrinfSchMClient_PduR = &PduR;
 /******************************************************************************/
 VAR(module_PduR, PDUR_VAR) PduR(
    {
+#if(STD_ON == _ReSIM)
+// char strModuleName[6];
+#else
+#endif
          PDUR_AR_RELEASE_VERSION_MAJOR
       ,  PDUR_AR_RELEASE_VERSION_MINOR
       ,  0x00
@@ -214,6 +218,15 @@ FUNC(void, PDUR_CODE) module_PduR::TpCopyTxData(void){
 }
 
 FUNC(void, PDUR_CODE) module_PduR::TpTxConfirmation(void){
+}
+
+void infPduRClient_Lo::Transmit(void){
+}
+
+void infPduRClient_Lo::CancelTransmit(void){
+}
+
+void infPduRClient_Lo::CancelReceive(void){
 }
 
 /******************************************************************************/
