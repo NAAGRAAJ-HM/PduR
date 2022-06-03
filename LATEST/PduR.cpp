@@ -10,6 +10,7 @@
 #include "CfgPduR.hpp"
 #include "PduR_core.hpp"
 #include "infPduR_Exp.hpp"
+#include "infPduR_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
