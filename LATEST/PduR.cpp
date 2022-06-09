@@ -74,10 +74,10 @@ CONSTP2VAR(infSchMClient, PDUR_VAR, PDUR_CONST) gptrinfSchMClient_PduR = &PduR;
 VAR(module_PduR, PDUR_VAR) PduR(
    {
 #if(STD_ON == _ReSIM)
-   char strModuleName[6] = "PDUR";
+         "PduR"
 #else
 #endif
-         PDUR_AR_RELEASE_VERSION_MAJOR
+      ,  PDUR_AR_RELEASE_VERSION_MAJOR
       ,  PDUR_AR_RELEASE_VERSION_MINOR
       ,  0x00
       ,  0xFF
