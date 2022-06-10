@@ -217,13 +217,34 @@ FUNC(void, PDUR_CODE) module_PduR::TpCopyTxData(void){
 FUNC(void, PDUR_CODE) module_PduR::TpTxConfirmation(void){
 }
 
-void infPduRClient_Lo::Transmit(void){
+FUNC(void, PDUR_CODE) infPduRClient_Up::Transmit(void){
 }
 
-void infPduRClient_Lo::CancelTransmit(void){
+FUNC(void, PDUR_CODE) infPduRClient_Up::TriggerTransmit(void){
 }
 
-void infPduRClient_Lo::CancelReceive(void){
+FUNC(void, PDUR_CODE) infPduRClient_Up::TxConfirmation(void){
+}
+
+FUNC(void, PDUR_CODE) infPduRClient_Up::CancelTransmit(void){
+}
+
+FUNC(void, PDUR_CODE) infPduRClient_Up::CancelReceive(void){
+}
+
+FUNC(void, PDUR_CODE) infPduRClient_Lo::Transmit(void){
+}
+
+FUNC(void, PDUR_CODE) infPduRClient_Lo::TriggerTransmit(void){
+}
+
+FUNC(void, PDUR_CODE) infPduRClient_Lo::TxConfirmation(void){
+}
+
+FUNC(void, PDUR_CODE) infPduRClient_Lo::CancelTransmit(void){
+}
+
+FUNC(void, PDUR_CODE) infPduRClient_Lo::CancelReceive(void){
 }
 
 /******************************************************************************/
