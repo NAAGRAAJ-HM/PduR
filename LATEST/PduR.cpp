@@ -177,7 +177,8 @@ FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 }
 
 FUNC(TypeId, PDUR_CODE) module_PduR::GetConfigurationId(void){
-   return lptrCfg->Id;
+   CfgPduR_Type* lptrCfgPduR = ((CfgPduR_Type*)lptrCfg);
+   return lptrCfgPduR->Core.Id;
 }
 
 FUNC(void, PDUR_CODE) module_PduR::DisableRouting(
@@ -187,7 +188,7 @@ FUNC(void, PDUR_CODE) module_PduR::DisableRouting(
       //TBD: RoutingPathGroup with Id exists
       STD_HIGH
    ){
-      //TBD: enable TypeIdRoutingPathGroup 
+      IdRoutingPathGroup++; //TBD: enable TypeIdRoutingPathGroup 
    }
    else{
 #if(STD_ON == PduR_DevErrorDetect)
@@ -208,7 +209,7 @@ FUNC(void, PDUR_CODE) module_PduR::EnableRouting(
       //TBD: RoutingPathGroup with Id exists
       STD_HIGH
    ){
-      //TBD: enable TypeIdRoutingPathGroup 
+      IdRoutingPathGroup++; //TBD: enable TypeIdRoutingPathGroup 
    }
    else{
 #if(STD_ON == PduR_DevErrorDetect)
@@ -226,40 +227,56 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::Transmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::TriggerTransmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::TxConfirmation(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::CancelTransmit(
    TypeIdPdu IdPduTx
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::RxIndication(
             TypeIdPdu    IdPduRx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduRx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::CancelReceive(
-   TypeIdPdu IdPduTx
+   TypeIdPdu IdPduRx
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduRx);
+   return E_OK;
 }
 
 //TBD: TpCopyRxData
@@ -270,40 +287,56 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::Transmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::TriggerTransmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::TxConfirmation(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::CancelTransmit(
    TypeIdPdu IdPduTx
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduTx);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::RxIndication(
             TypeIdPdu    IdPduRx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduRx);
+   UNUSED(ptrInfoPdu);
+   return E_OK;
 }
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::CancelReceive(
-   TypeIdPdu IdPduTx
+   TypeIdPdu IdPduRx
 ){
-//TBD: re-entrant for different Id, non-reentrant for same Id
+   //TBD: re-entrant for different Id, non-reentrant for same Id
+   UNUSED(IdPduRx);
+   return E_OK;
 }
 
 //TBD: TpCopyRxData

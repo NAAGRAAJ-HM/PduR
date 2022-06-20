@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "CfgPduR.hpp" //TBD: more types to ComStackTypes.hpp and remove this
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -24,11 +25,33 @@ class infPduRClient_Up{
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      void Transmit        (void);
-      void TriggerTransmit (void);
-      void TxConfirmation  (void);
-      void CancelTransmit  (void);
-      void CancelReceive   (void);
+      Std_TypeReturn Transmit(
+                  TypeIdPdu    IdPduTx
+         ,  const TypeInfoPdu* ptrInfoPdu
+      );
+
+      Std_TypeReturn TriggerTransmit(
+                  TypeIdPdu    IdPduTx
+         ,  const TypeInfoPdu* ptrInfoPdu
+      );
+
+      Std_TypeReturn TxConfirmation(
+                  TypeIdPdu    IdPduTx
+         ,  const TypeInfoPdu* ptrInfoPdu
+      );
+
+      Std_TypeReturn RxIndication(
+                  TypeIdPdu    IdPduRx
+         ,  const TypeInfoPdu* ptrInfoPdu
+      );
+
+      Std_TypeReturn CancelTransmit(
+         TypeIdPdu IdPduRx
+      );
+
+      Std_TypeReturn CancelReceive(
+         TypeIdPdu IdPduRx
+      );
 };
 
 /******************************************************************************/
