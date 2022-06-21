@@ -176,7 +176,7 @@ FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 #endif
 }
 
-FUNC(TypeId, PDUR_CODE) module_PduR::GetConfigurationId(void){
+FUNC(uint16, PDUR_CODE) module_PduR::GetConfigurationId(void){
    CfgPduR_Type* lptrCfgPduR = ((CfgPduR_Type*)lptrCfg);
    return lptrCfgPduR->Core.Id;
 }
@@ -290,6 +290,10 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::Transmit(
    //TBD: re-entrant for different Id, non-reentrant for same Id
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
+#if(STD_ON == _ReSIM)
+   gptrinfDcm_PduR->RxIndication();
+#else
+#endif
    return E_OK;
 }
 
@@ -310,6 +314,10 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::TxConfirmation(
    //TBD: re-entrant for different Id, non-reentrant for same Id
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
+#if(STD_ON == _ReSIM)
+   gptrinfDcm_PduR->TxConfirmation();
+#else
+#endif
    return E_OK;
 }
 
