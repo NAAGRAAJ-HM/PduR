@@ -230,6 +230,10 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::Transmit(
    //TBD: re-entrant for different Id, non-reentrant for same Id
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
+#if(STD_ON == _ReSIM)
+   gptrinfCanIf_PduR->Transmit();
+#else
+#endif
    return E_OK;
 }
 
@@ -250,6 +254,10 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::TxConfirmation(
    //TBD: re-entrant for different Id, non-reentrant for same Id
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
+#if(STD_ON == _ReSIM)
+   gptrinfCanIf_PduR->TxConfirmation();
+#else
+#endif
    return E_OK;
 }
 
@@ -279,9 +287,32 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::CancelReceive(
    return E_OK;
 }
 
-//TBD: TpCopyRxData
-//TBD: TpCopyTxData
-//TBD: StartOfReception
+FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::CopyRxData(
+   void
+){
+#if(STD_ON == _ReSIM)
+#else
+#endif
+   return E_OK;
+}
+
+FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::CopyTxData(
+   void
+){
+#if(STD_ON == _ReSIM)
+#else
+#endif
+   return E_OK;
+}
+
+FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Up::StartOfReception(
+   void
+){
+#if(STD_ON == _ReSIM)
+#else
+#endif
+   return E_OK;
+}
 
 FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::Transmit(
             TypeIdPdu    IdPduTx
@@ -336,6 +367,10 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::RxIndication(
    //TBD: re-entrant for different Id, non-reentrant for same Id
    UNUSED(IdPduRx);
    UNUSED(ptrInfoPdu);
+#if(STD_ON == _ReSIM)
+   gptrinfDcm_PduR->RxIndication();
+#else
+#endif
    return E_OK;
 }
 
@@ -347,9 +382,35 @@ FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::CancelReceive(
    return E_OK;
 }
 
-//TBD: TpCopyRxData
-//TBD: TpCopyTxData
-//TBD: StartOfReception
+FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::CopyRxData(
+   void
+){
+#if(STD_ON == _ReSIM)
+   gptrinfDcm_PduR->CopyRxData();
+#else
+#endif
+   return E_OK;
+}
+
+FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::CopyTxData(
+   void
+){
+#if(STD_ON == _ReSIM)
+   gptrinfDcm_PduR->CopyTxData();
+#else
+#endif
+   return E_OK;
+}
+
+FUNC(Std_TypeReturn, PDUR_CODE) infPduRClient_Lo::StartOfReception(
+   void
+){
+#if(STD_ON == _ReSIM)
+   gptrinfDcm_PduR->StartOfReception();
+#else
+#endif
+   return E_OK;
+}
 
 /******************************************************************************/
 /* EOF                                                                        */

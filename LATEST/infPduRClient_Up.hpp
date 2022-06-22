@@ -7,7 +7,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CfgPduR.hpp" //TBD: more types to ComStackTypes.hpp and remove this
+#include "CompilerCfg_PduR.hpp"
+#include "ComStackTypes.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -25,32 +26,44 @@ class infPduRClient_Up{
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      Std_TypeReturn Transmit(
+      FUNC(Std_TypeReturn, PDUR_CODE) Transmit(
                   TypeIdPdu    IdPduTx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      Std_TypeReturn TriggerTransmit(
+      FUNC(Std_TypeReturn, PDUR_CODE) TriggerTransmit(
                   TypeIdPdu    IdPduTx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      Std_TypeReturn TxConfirmation(
+      FUNC(Std_TypeReturn, PDUR_CODE) TxConfirmation(
                   TypeIdPdu    IdPduTx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      Std_TypeReturn RxIndication(
+      FUNC(Std_TypeReturn, PDUR_CODE) RxIndication(
                   TypeIdPdu    IdPduRx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      Std_TypeReturn CancelTransmit(
+      FUNC(Std_TypeReturn, PDUR_CODE) CancelTransmit(
          TypeIdPdu IdPduRx
       );
 
-      Std_TypeReturn CancelReceive(
+      FUNC(Std_TypeReturn, PDUR_CODE) CancelReceive(
          TypeIdPdu IdPduRx
+      );
+
+      FUNC(Std_TypeReturn, PDUR_CODE) CopyRxData(
+         void
+      );
+
+      FUNC(Std_TypeReturn, PDUR_CODE) CopyTxData(
+         void
+      );
+
+      FUNC(Std_TypeReturn, PDUR_CODE) StartOfReception(
+         void
       );
 };
 
