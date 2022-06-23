@@ -131,7 +131,9 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(
 #endif
 }
 
-FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
+FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(
+   void
+){
 #if(STD_ON == PduR_InitCheck)
    if(
          E_OK
@@ -154,7 +156,9 @@ FUNC(void, PDUR_CODE) module_PduR::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
+FUNC(void, PDUR_CODE) module_PduR::MainFunction(
+   void
+){
 #if(STD_ON == PduR_InitCheck)
    if(
          E_OK
@@ -176,7 +180,9 @@ FUNC(void, PDUR_CODE) module_PduR::MainFunction(void){
 #endif
 }
 
-FUNC(uint16, PDUR_CODE) module_PduR::GetConfigurationId(void){
+FUNC(uint16, PDUR_CODE) module_PduR::GetConfigurationId(
+   void
+){
    CfgPduR_Type* lptrCfgPduR = ((CfgPduR_Type*)lptrCfg);
    return lptrCfgPduR->Core.Id;
 }
