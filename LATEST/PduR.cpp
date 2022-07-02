@@ -82,12 +82,7 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgPduR;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == PduR_DevErrorDetect)
