@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstPduR.hpp"
 #include "CfgPduR.hpp"
 #include "PduR_core.hpp"
 #include "infPduR_Exp.hpp"
@@ -31,13 +32,15 @@ class module_PduR:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstPduR_Type* lptrConst = (ConstPduR_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, PDUR_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, PDUR_CONST,       PDUR_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
       );
       FUNC(void, PDUR_CODE) DeInitFunction (void);
       FUNC(void, PDUR_CODE) MainFunction   (void);

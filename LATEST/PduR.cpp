@@ -48,7 +48,8 @@ VAR(module_PduR, PDUR_VAR) PduR;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, PDUR_CODE) module_PduR::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, PDUR_CONST,       PDUR_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == PduR_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == PduR_DevErrorDetect)
