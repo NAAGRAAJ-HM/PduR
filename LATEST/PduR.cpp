@@ -61,7 +61,7 @@ FUNC(void, PDUR_CODE) module_PduR::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstPduR_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
