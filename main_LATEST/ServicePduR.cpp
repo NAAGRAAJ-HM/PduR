@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define PDUR_AR_RELEASE_VERSION_MAJOR                                          4
-#define PDUR_AR_RELEASE_VERSION_MINOR                                          3
+#define SERVICEPDUR_AR_RELEASE_VERSION_MAJOR                                          4
+#define SERVICEPDUR_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(PDUR_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible PDUR_AR_RELEASE_VERSION_MAJOR!"
+#if(SERVICEPDUR_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SERVICEPDUR_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(PDUR_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible PDUR_AR_RELEASE_VERSION_MINOR!"
+#if(SERVICEPDUR_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SERVICEPDUR_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ServicePduR, PDUR_VAR) ServicePduR;
+VAR(module_ServicePduR, SERVICEPDUR_VAR) ServicePduR;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, PDUR_CODE) module_ServicePduR::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, PDUR_CONST,       PDUR_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   PDUR_CONFIG_DATA, PDUR_APPL_CONST) lptrCfgModule
+FUNC(void, SERVICEPDUR_CODE) module_ServicePduR::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICEPDUR_CONST,       SERVICEPDUR_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICEPDUR_CONFIG_DATA, SERVICEPDUR_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServicePduR_InitCheck)
    if(
@@ -84,14 +84,14 @@ FUNC(void, PDUR_CODE) module_ServicePduR::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  PDUR_E_UNINIT
+         ,  SERVICEPDUR_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, PDUR_CODE) module_ServicePduR::DeInitFunction(
+FUNC(void, SERVICEPDUR_CODE) module_ServicePduR::DeInitFunction(
    void
 ){
 #if(STD_ON == ServicePduR_InitCheck)
@@ -109,14 +109,14 @@ FUNC(void, PDUR_CODE) module_ServicePduR::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  PDUR_E_UNINIT
+         ,  SERVICEPDUR_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, PDUR_CODE) module_ServicePduR::MainFunction(
+FUNC(void, SERVICEPDUR_CODE) module_ServicePduR::MainFunction(
    void
 ){
 #if(STD_ON == ServicePduR_InitCheck)
@@ -133,21 +133,21 @@ FUNC(void, PDUR_CODE) module_ServicePduR::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  PDUR_E_UNINIT
+         ,  SERVICEPDUR_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(uint16, PDUR_CODE) module_ServicePduR::GetConfigurationId(
+FUNC(uint16, SERVICEPDUR_CODE) module_ServicePduR::GetConfigurationId(
    void
 ){
    CfgServicePduR_Type* lptrCfgServicePduR = ((CfgServicePduR_Type*)lptrCfg);
    return lptrCfgServicePduR->Core.Id;
 }
 
-FUNC(void, PDUR_CODE) module_ServicePduR::DisableRouting(
+FUNC(void, SERVICEPDUR_CODE) module_ServicePduR::DisableRouting(
    TypeIdRoutingPathGroup IdRoutingPathGroup 
 ){
    if(
@@ -162,13 +162,13 @@ FUNC(void, PDUR_CODE) module_ServicePduR::DisableRouting(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  PDUR_E_ROUTING_PATH_GROUP_ID_INVALID
+         ,  SERVICEPDUR_E_ROUTING_PATH_GROUP_ID_INVALID
       );
 #endif
    }
 }
 
-FUNC(void, PDUR_CODE) module_ServicePduR::EnableRouting(
+FUNC(void, SERVICEPDUR_CODE) module_ServicePduR::EnableRouting(
    TypeIdRoutingPathGroup IdRoutingPathGroup 
 ){
    if(
@@ -183,13 +183,13 @@ FUNC(void, PDUR_CODE) module_ServicePduR::EnableRouting(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  PDUR_E_ROUTING_PATH_GROUP_ID_INVALID
+         ,  SERVICEPDUR_E_ROUTING_PATH_GROUP_ID_INVALID
       );
 #endif
    }
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::Transmit(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::Transmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -203,7 +203,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::Transmit(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::TriggerTransmit(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::TriggerTransmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -213,7 +213,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::TriggerTransmit(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::TxConfirmation(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::TxConfirmation(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -227,7 +227,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::TxConfirmation(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::McalCancelTransmit(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::McalCancelTransmit(
    TypeIdPdu IdPduTx
 ){
    //TBD: re-entrant for different Id, non-reentrant for same Id
@@ -235,7 +235,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::McalCancelTransmit(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::RxIndication(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::RxIndication(
             TypeIdPdu    IdServicePduRx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -245,7 +245,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::RxIndication(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::McalCancelReceive(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::McalCancelReceive(
    TypeIdPdu IdServicePduRx
 ){
    //TBD: re-entrant for different Id, non-reentrant for same Id
@@ -253,7 +253,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::McalCancelReceive(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::CopyRxData(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::CopyRxData(
    void
 ){
 #if(STD_ON == _ReSIM)
@@ -262,7 +262,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::CopyRxData(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::CopyTxData(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::CopyTxData(
    void
 ){
 #if(STD_ON == _ReSIM)
@@ -271,7 +271,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::CopyTxData(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::StartOfReception(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::StartOfReception(
    void
 ){
 #if(STD_ON == _ReSIM)
@@ -280,7 +280,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Up::StartOfReception(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::Transmit(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::Transmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -294,7 +294,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::Transmit(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::TriggerTransmit(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::TriggerTransmit(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -304,7 +304,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::TriggerTransmit(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::TxConfirmation(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::TxConfirmation(
             TypeIdPdu    IdPduTx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -318,7 +318,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::TxConfirmation(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::McalCancelTransmit(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::McalCancelTransmit(
    TypeIdPdu IdPduTx
 ){
    //TBD: re-entrant for different Id, non-reentrant for same Id
@@ -326,7 +326,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::McalCancelTransmit(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::RxIndication(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::RxIndication(
             TypeIdPdu    IdServicePduRx
    ,  const TypeInfoPdu* ptrInfoPdu
 ){
@@ -340,7 +340,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::RxIndication(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::McalCancelReceive(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::McalCancelReceive(
    TypeIdPdu IdServicePduRx
 ){
    //TBD: re-entrant for different Id, non-reentrant for same Id
@@ -348,7 +348,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::McalCancelReceive(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::CopyRxData(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::CopyRxData(
    void
 ){
 #if(STD_ON == _ReSIM)
@@ -358,7 +358,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::CopyRxData(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::CopyTxData(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::CopyTxData(
    void
 ){
 #if(STD_ON == _ReSIM)
@@ -368,7 +368,7 @@ FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::CopyTxData(
    return E_OK;
 }
 
-FUNC(Std_TypeReturn, PDUR_CODE) infServicePduRClient_Lo::StartOfReception(
+FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::StartOfReception(
    void
 ){
 #if(STD_ON == _ReSIM)

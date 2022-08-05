@@ -21,8 +21,8 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 typedef enum{
-      PDUR_E_UNINIT
-   ,  PDUR_E_ROUTING_PATH_GROUP_ID_INVALID
+      SERVICEPDUR_E_UNINIT
+   ,  SERVICEPDUR_E_ROUTING_PATH_GROUP_ID_INVALID
 }ServicePduR_TypeServiceDetErrorCode;
 
 /******************************************************************************/

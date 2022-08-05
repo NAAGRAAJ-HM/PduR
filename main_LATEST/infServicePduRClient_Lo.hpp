@@ -26,43 +26,43 @@ class infServicePduRClient_Lo{
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(Std_TypeReturn, PDUR_CODE) Transmit(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) Transmit(
                   TypeIdPdu    IdPduTx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) TriggerTransmit(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) TriggerTransmit(
                   TypeIdPdu    IdPduTx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) TxConfirmation(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) TxConfirmation(
                   TypeIdPdu    IdPduTx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) RxIndication(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) RxIndication(
                   TypeIdPdu    IdServicePduRx
          ,  const TypeInfoPdu* ptrInfoPdu
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) McalCancelTransmit(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) McalCancelTransmit(
          TypeIdPdu IdServicePduRx
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) McalCancelReceive(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) McalCancelReceive(
          TypeIdPdu IdServicePduRx
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) CopyRxData(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) CopyRxData(
          void
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) CopyTxData(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) CopyTxData(
          void
       );
 
-      FUNC(Std_TypeReturn, PDUR_CODE) StartOfReception(
+      FUNC(Std_TypeReturn, SERVICEPDUR_CODE) StartOfReception(
          void
       );
 };
