@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServicePduR:
-      INTERFACES_EXMCALPORTED_SERVICEPDUR
+      INTERFACES_EXPORTED_SERVICEPDUR
       public abstract_module
    ,  public class_ServicePduR_Functionality
 {
