@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : ServicePduR.hpp                                                          */
+/* File   : ServicePduR.hpp                                                   */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstServicePduR.hpp"
+#include "infServicePduR_ServiceNvM_Types.hpp"
 #include "CfgServicePduR.hpp"
 #include "ServicePduR_core.hpp"
 #include "infServicePduR_Exp.hpp"
