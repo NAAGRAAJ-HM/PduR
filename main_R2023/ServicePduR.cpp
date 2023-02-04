@@ -134,8 +134,8 @@ FUNC(void, SERVICEPDUR_CODE) module_ServicePduR::MainFunction(
 FUNC(uint16, SERVICEPDUR_CODE) module_ServicePduR::GetConfigurationId(
    void
 ){
-   CfgServicePduR_Type* lptrCfgServicePduR = ((CfgServicePduR_Type*)lptrCfg);
-   return lptrCfgServicePduR->Core.Id;
+   NvM_BlocksNv_ServicePduR_Type* lptrNvM_BlocksNv_ServicePduR = ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg);
+   return lptrNvM_BlocksNv_ServicePduR->Core.Id;
 }
 
 FUNC(void, SERVICEPDUR_CODE) module_ServicePduR::DisableRouting(
@@ -188,7 +188,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::Transmit(
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfEcuabCanIf_ServicePduR->Transmit();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfEcuabCanIf_ServicePduR->Transmit();
 #else
 #endif
    return E_OK;
@@ -212,7 +212,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Up::TxConfirmation(
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfEcuabCanIf_ServicePduR->TxConfirmation();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfEcuabCanIf_ServicePduR->TxConfirmation();
 #else
 #endif
    return E_OK;
@@ -279,7 +279,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::Transmit(
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->RxIndication();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->RxIndication();
 #else
 #endif
    return E_OK;
@@ -303,7 +303,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::TxConfirmation(
    UNUSED(IdPduTx);
    UNUSED(ptrInfoPdu);
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->TxConfirmation();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->TxConfirmation();
 #else
 #endif
    return E_OK;
@@ -325,7 +325,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::RxIndication(
    UNUSED(IdServicePduRx);
    UNUSED(ptrInfoPdu);
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->RxIndication();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->RxIndication();
 #else
 #endif
    return E_OK;
@@ -343,7 +343,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::CopyRxData(
    void
 ){
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->CopyRxData();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->CopyRxData();
 #else
 #endif
    return E_OK;
@@ -353,7 +353,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::CopyTxData(
    void
 ){
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->CopyTxData();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->CopyTxData();
 #else
 #endif
    return E_OK;
@@ -363,7 +363,7 @@ FUNC(Std_TypeReturn, SERVICEPDUR_CODE) infServicePduRClient_Lo::StartOfReception
    void
 ){
 #if(STD_ON == _ReSIM)
-// ((CfgServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->StartOfReception();
+// ((NvM_BlocksNv_ServicePduR_Type*)lptrCfg)->ptrinfServiceDcm_ServicePduR->StartOfReception();
 #else
 #endif
    return E_OK;
