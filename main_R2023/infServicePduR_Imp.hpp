@@ -7,6 +7,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ReSim.hpp"
+
 #include "infEcuabCanIf_ServicePduR.hpp"
 #include "infServiceDcm_ServicePduR.hpp"
 
