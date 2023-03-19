@@ -1,15 +1,15 @@
+#pragma once
 /******************************************************************************/
-/* File   : ServicePduR.cpp                                                   */
+/* File   : infServiceSwcPduRServiceSwcCanTp.hpp                              */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Std_Types.hpp"
+#include "CfgServiceSwcPduR.hpp"
 
-#include "ServicePduR.hpp"
-#include "infServicePduR_ServiceSwcEcuM.hpp"
+#include "CanTypes.hpp" //TBD: change to ComStackTypes.hpp
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -24,6 +24,12 @@
 /******************************************************************************/
 
 /******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+extern FUNC(teStatusRequestBuffer, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_StartOfReception (uint8 lu8IndexBufferRx);
+extern FUNC(teStatusRequestBuffer, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_CopyRxData       (uint8 lu8IndexBufferRx);
+
+/******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
 
@@ -34,13 +40,6 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-FUNC(void, SERVICEPDUR_CODE) ServicePduR_InitFunction   (const CfgServicePduR_Type* CfgServicePduR_ptr){UNUSED(CfgServicePduR_ptr);}
-FUNC(void, SERVICEPDUR_CODE) ServicePduR_DeInitFunction (void){}
-FUNC(void, SERVICEPDUR_CODE) ServicePduR_MainFunction   (void){}
 
 /******************************************************************************/
 /* EOF                                                                        */
