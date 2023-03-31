@@ -24,7 +24,7 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_InitFunction   (const CfgServiceSwcPduR_Type*   CfgServiceSwcPduR_ptr);
+extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_InitFunction   (const CfgServiceSwcPduR_tst* CfgServiceSwcPduR_ptr);
 extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_DeInitFunction (void);
 
 /******************************************************************************/

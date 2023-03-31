@@ -43,7 +43,7 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_InitFunction   (const CfgServiceSwcPduR_Type* CfgServiceSwcPduR_ptr){UNUSED(CfgServiceSwcPduR_ptr);}
+FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_InitFunction   (const CfgServiceSwcPduR_tst* CfgServiceSwcPduR_ptr){UNUSED(CfgServiceSwcPduR_ptr);}
 FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_DeInitFunction (void){}
 FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcSchM_MainFunction   (void){}
 
@@ -51,14 +51,8 @@ FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduREcuabCanIf_RxIndication(uint8 l
    UNUSED(lu8IndexBufferRx);
 }
 
-FUNC(teStatusRequestBuffer, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_StartOfReception(uint8 lu8IndexBufferRx){
-   //TBD: decision based on Pdu information at PduR
-   return infServiceSwcDcmServiceSwcPduR_StartOfReception(lu8IndexBufferRx);
-}
-
-FUNC(teStatusRequestBuffer, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_CopyRxData(uint8 lu8IndexBufferRx){
-   UNUSED(lu8IndexBufferRx);
-   return teStatusRequestBuffer_OK;
+FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_RxIndication(uint8 lu8IndexBufferRx){
+   infServiceSwcDcmServiceSwcPduR_RxIndication(lu8IndexBufferRx); //TBD: In this project, only Dcm is indirect client of CanTp
 }
 
 /******************************************************************************/

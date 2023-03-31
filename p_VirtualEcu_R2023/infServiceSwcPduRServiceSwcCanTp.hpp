@@ -26,8 +26,6 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(teStatusRequestBuffer, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_StartOfReception (uint8 lu8IndexBufferRx);
-extern FUNC(teStatusRequestBuffer, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_CopyRxData       (uint8 lu8IndexBufferRx);
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -40,6 +38,11 @@ extern FUNC(teStatusRequestBuffer, SERVICESWCPDUR_CODE) infServiceSwcPduRService
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcCanTp_RxIndication(uint8 lu8IndexBufferRx);
 
 /******************************************************************************/
 /* EOF                                                                        */
