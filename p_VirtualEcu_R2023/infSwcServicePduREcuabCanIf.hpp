@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : infServiceSwcPduREcuabCanIf.hpp                                   */
+/* File   : infSwcServicePduREcuabCanIf.hpp                                   */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CfgServiceSwcPduR.hpp"
+#include "CfgSwcServicePduR.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -40,7 +40,7 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduREcuabCanIf_RxIndication(uint8 lu8IndexBufferRx);
+extern FUNC(void, SWCSERVICEPDUR_CODE) infSwcServicePduREcuabCanIf_RxIndication(uint8 lu8IndexBufferRx);
 
 /******************************************************************************/
 /* EOF                                                                        */

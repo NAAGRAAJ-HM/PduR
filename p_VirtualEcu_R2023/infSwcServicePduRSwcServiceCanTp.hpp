@@ -1,13 +1,15 @@
 #pragma once
 /******************************************************************************/
-/* File   : infServiceSwcPduRServiceSwcEcuM.hpp                               */
+/* File   : infSwcServicePduRSwcServiceCanTp.hpp                              */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CfgServiceSwcPduR.hpp"
+#include "CfgSwcServicePduR.hpp"
+
+#include "CanTypes.hpp" //TBD: change to ComStackTypes.hpp
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -24,8 +26,6 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_InitFunction   (const CfgServiceSwcPduR_tst* CfgServiceSwcPduR_ptr);
-extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_DeInitFunction (void);
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -38,6 +38,11 @@ extern FUNC(void, SERVICESWCPDUR_CODE) infServiceSwcPduRServiceSwcEcuM_DeInitFun
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+extern FUNC(void, SWCSERVICEPDUR_CODE) infSwcServicePduRSwcServiceCanTp_RxIndication(uint8 lu8IndexBufferRx);
 
 /******************************************************************************/
 /* EOF                                                                        */
