@@ -17,9 +17,9 @@ extern FUNC(Std_ReturnType, PDUR_CODE) PduR_MF_CancelTransmit_UpToLo(
    ,      VAR(Type_SwcServiceCom_tIdPdu, AUTOMATIC            ) mcId
 );
 
-extern FUNC(void, PDUR_CODE) PduR_MF_McIfTx_CanIf_TxConfirmation(VAR(Type_SwcServiceCom_tIdPdu,AUTOMATIC) id);
-extern FUNC(void, PDUR_CODE) PduR_MF_McIfTx_FrIf_TxConfirmation( VAR(Type_SwcServiceCom_tIdPdu,AUTOMATIC) id);
-extern FUNC(void, PDUR_CODE) PduR_MF_McIfTx_LinIf_TxConfirmation(VAR(Type_SwcServiceCom_tIdPdu,AUTOMATIC) id);
+extern FUNC(void, PDUR_CODE) PduR_MF_McIfTx_CanIf_TxConfirmation(VAR(Type_SwcServiceCom_tIdPdu, AUTOMATIC) id);
+extern FUNC(void, PDUR_CODE) PduR_MF_McIfTx_FrIf_TxConfirmation( VAR(Type_SwcServiceCom_tIdPdu, AUTOMATIC) id);
+extern FUNC(void, PDUR_CODE) PduR_MF_McIfTx_LinIf_TxConfirmation(VAR(Type_SwcServiceCom_tIdPdu, AUTOMATIC) id);
 
 extern FUNC(void, PDUR_CODE) PduR_MF_McIfTx_TriggerTransmit(
         VAR(Type_SwcServiceCom_tIdPdu,    AUTOMATIC              ) id

@@ -183,7 +183,7 @@ typedef struct{
 typedef P2CONST(PduR_GwTp_SessionListType, TYPEDEF, PDUR_CONST) PduR_GwTp_SessionListPtr;
 
 typedef struct{
-   P2VAR(uint8,AUTOMATIC, PDUR_VAR) PduR_UpIfTxConf_ConfigPtr;
+   P2VAR(uint8, AUTOMATIC, PDUR_VAR) PduR_UpIfTxConf_ConfigPtr;
 }PduR_UpIfTxConf_Config;
 
 typedef struct{
