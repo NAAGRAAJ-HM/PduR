@@ -18,7 +18,7 @@ extern "C"
 #define PDUR_SW_MAJOR_VERSION  13u
 #define PDUR_SW_MINOR_VERSION   3u
 #define PDUR_SW_PATCH_VERSION   3u
-#define PDUR_VENDOR_ID           30u
+#define PDUR_VENDOR_ID           1u
 #define PDUR_MODULE_ID           51u
 #define PDUR_E_CONFIG_PTR_INVALID             ((uint8)0x00u)
 #define PDUR_E_INVALID_REQUEST                ((uint8)0x01u)
