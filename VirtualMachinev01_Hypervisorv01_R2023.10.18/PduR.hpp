@@ -32,7 +32,7 @@
 #define PDUR_SID_GATEWAYTPTXCONFIRMATION          (9)
 #endif
 
-#ifdef BUILD_RIVIAN
+#ifdef BUILD_RAJA
 #define PDUR_SID_DCMCHANGEPARAMETER     (9)
 #define PDUR_SID_READPARAMETER          (10)
 #endif
